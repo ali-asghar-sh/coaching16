@@ -1,3 +1,4 @@
+
 resource "aws_iam_role" "lambda_exec" {
   name = "lambda_exec_role"
 
@@ -32,7 +33,7 @@ resource "aws_lambda_function" "retrieve_url_lambda" {
   environment {
     variables = {
       REGION_AWS = "ap-southeast-1"
-      DB_NAME     = "your-dynamodb-table-name" ####Need to update dynamodb table name 
+      DB_NAME     = var.db_name   ####Need to update dynamodb table name in variable.tf
     }
   }
 }
@@ -52,7 +53,7 @@ resource "aws_lambda_function" "create_url_lambda" {
       MIN_CHAR   = "5"
       MAX_CHAR   = "8"
       REGION_AWS = "ap-southeast-1"
-      DB_NAME    = "your-dynamodb-table-name"       #Need to update Dynamodb Table name 
+      DB_NAME    = var.db_name       #Need to update Dynamodb Table name in variable.tf
     }
   }
 }
