@@ -33,7 +33,7 @@ resource "aws_lambda_function" "retrieve_url_lambda" {
   environment {
     variables = {
       REGION_AWS = "ap-southeast-1"
-      DB_NAME    = "your-dynamodb-table-name"
+      DB_NAME     = "your-dynamodb-table-name"
     }
   }
 }
