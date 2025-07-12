@@ -20,8 +20,12 @@ resource "aws_wafv2_web_acl_logging_configuration" "api_gw_waf_logging" {
     }
   }
 }
-
 resource "aws_cloudwatch_log_group" "waf_logs" {
-  name              = "" # Must start with "aws-waf-logs-" prefix
+  name              = "aws-waf-logs-api-group2-gw"  # Fixed: Added valid name
   retention_in_days = 14
+  tags = {
+    Environment = "prod"
+  }
+  # Optional: Uncomment if using KMS
+  # kms_key_id = aws_kms_key.log_key.arn
 }
