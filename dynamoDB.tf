@@ -20,8 +20,8 @@ resource "aws_dynamodb_table" "url_store" {
   }
 
   tags = {
-    Name        = "URL Shortener Table"
-    Project     = "URL-Shortener"
-    ManagedBy   = "Terraform"
+    Name      = "URL Shortener Table"
+    Project   = "URL-Shortener"
+    ManagedBy = "Terraform"
   }
 }
