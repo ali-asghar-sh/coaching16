@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1" # ACM for API Gateway edge-optimized must be in us-east-1
+  region = "ap-southeast-1" # ACM for API Gateway edge-optimized must be in us-east-1
 }
 
 resource "aws_acm_certificate" "monica_cert" {
